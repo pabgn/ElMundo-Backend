@@ -47,7 +47,7 @@ func GetChannel(c *gin.Context) {
 
 	c.JSON(200, map[string]interface{}{
 		"news":         news,
-		"next_refresh": lastRefresh,
+		"next_refresh": lastRefresh + uint64(TIMEOUT_MAX_AGE),
 	})
 }
 
